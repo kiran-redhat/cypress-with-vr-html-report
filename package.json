@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "cypressOpen": "cypress open",
-    "cypressTest": "cypress run"
+    "runFunctionalTests": "cypress run --headed --spec 'cypress/integration/functional-automated-tests/*.js' --browser chrome",
+    "runVisualTests": "cypress run --spec 'cypress/integration/visual-automated-tests/*.js' --browser chrome",
+    "executeTests": "npm-run-all --continue-on-error runVisualTests runFunctionalTests"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
   "homepage": "https://github.com/kiran-redhat/cypress-with-vr-html-report#readme",
   "devDependencies": {
     "cypress": "^8.2.0",
-    "cypress-mochawesome-reporter": "^2.2.1"
+    "cypress-image-snapshot": "^4.0.1",
+    "cypress-mochawesome-reporter": "^2.2.1",
+    "npm-run-all": "^4.1.5"
   }
 }

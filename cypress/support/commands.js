@@ -7,19 +7,37 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// Support commands to use cypress-image-snapshot
+import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
+
+addMatchImageSnapshotCommand({
+  failureThreshold: 0.00,
+  failureThresholdType: 'percent',
+  customDiffConfig: { threshold: 0.0 },
+  capture: 'viewport',
+});
+
+// Desktop viewport
+Cypress.Commands.add("desktopViewport", (size) => {
+cy.viewport(1280, 720);
+
+// Wait for viewport resize
+cy.wait(500);
+});
+
+// iphone-x viewport
+Cypress.Commands.add("iPhoneXViewport", (size) => {
+  cy.viewport(375, 812);
+
+  // Wait for viewport resize
+  cy.wait(500);
+});
+
+// ipad-2 viewport
+Cypress.Commands.add("iPad2Viewport", (size) => {
+  cy.viewport(768, 1024);
+
+  // Wait for viewport resize
+  cy.wait(500);
+});

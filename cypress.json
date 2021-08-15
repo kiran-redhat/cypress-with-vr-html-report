@@ -8,5 +8,6 @@
     "embeddedScreenshots": true,
     "inlineAssets": true
   },
-  "video": false
+  "video": false,
+  "screenshotsFolder": "cypress/reports/screenshots"
 }
