@@ -1,0 +1,36 @@
+{
+  "name": "cypress-with-vr-html-report",
+  "version": "1.0.0",
+  "description": "Run automated tests for Buggy Cars Rating(https://buggy.justtestit.org/) - this will show how cypress tests can be run on desktop and mobile view ports, how visual regression testing can be done with cypress and generates a HTML report at the end for good user experience",
+  "main": "index.js",
+  "scripts": {
+    "cypressOpen": "cypress open",
+    "executeFunctionalTests": "cypress run --headed --spec 'cypress/integration/functional-automated-tests/*.js' --browser chrome",
+    "executeVisualTests": "cypress run --spec 'cypress/integration/visual-automated-tests/*.js' --browser chrome",
+    "executeAllTests": "npm-run-all --continue-on-error executeVisualTests executeFunctionalTests",
+    "mergeJsonFiles": "mochawesome-merge cypress/reports/.jsons/*.json >| cypress/reports/mochawesome.json",
+    "generateHtmlReport": "marge --reportDir cypress/reports/ cypress/reports/mochawesome.json",
+    "executeFunctionalTests:report": "run-s --continue-on-error executeFunctionalTests mergeJsonFiles generateHtmlReport",    
+    "executeVisualTests:report": "run-s --continue-on-error executeVisualTests mergeJsonFiles generateHtmlReport",
+    "executeAllTests:report": "run-s --continue-on-error executeAllTests mergeJsonFiles generateHtmlReport"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiran-redhat/cypress-with-vr-html-report.git"
+  },
+  "keywords": [
+    "Cypress visual regression testing with HTML report"
+  ],
+  "author": "Kiran Chilakamarri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiran-redhat/cypress-with-vr-html-report/issues"
+  },
+  "homepage": "https://github.com/kiran-redhat/cypress-with-vr-html-report#readme",
+  "devDependencies": {
+    "cypress": "^8.2.0",
+    "cypress-image-snapshot": "^4.0.1",
+    "cypress-mochawesome-reporter": "^2.2.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
