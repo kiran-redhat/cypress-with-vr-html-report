@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "cypressOpen": "cypress open",
-    "runFunctionalTests": "cypress run --headed --spec 'cypress/integration/functional-automated-tests/*.js' --browser chrome",
-    "runVisualTests": "cypress run --spec 'cypress/integration/visual-automated-tests/*.js' --browser chrome",
-    "executeTests": "npm-run-all --continue-on-error runVisualTests runFunctionalTests"
+    "executeFunctionalTests": "cypress run --headed --spec 'cypress/integration/functional-automated-tests/*.js' --browser chrome",
+    "executeVisualTests": "cypress run --spec 'cypress/integration/visual-automated-tests/*.js' --browser chrome",
+    "executeAllTests": "npm-run-all --continue-on-error executeVisualTests executeFunctionalTests",
+    "mergeJsonFiles": "mochawesome-merge cypress/reports/.jsons/*.json >| cypress/reports/mochawesome.json",
+    "generateHtmlReport": "marge --reportDir cypress/reports/ cypress/reports/mochawesome.json",
+    "executeFunctionalTests:report": "run-s --continue-on-error executeFunctionalTests mergeJsonFiles generateHtmlReport",    
+    "executeVisualTests:report": "run-s --continue-on-error executeVisualTests mergeJsonFiles generateHtmlReport",
+    "executeAllTests:report": "run-s --continue-on-error executeAllTests mergeJsonFiles generateHtmlReport"
   },
   "repository": {
     "type": "git",
