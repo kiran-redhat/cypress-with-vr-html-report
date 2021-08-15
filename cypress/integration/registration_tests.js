@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 
 describe('Registration tests', function(){
+
+    // Set all re-usable constants here
     const passwordToRegister = 'MySuperSecreat@123';
 
     // As this is just a demo, we are doing just form level validations - however, not field level validations
@@ -9,7 +11,7 @@ describe('Registration tests', function(){
         cy.get('.btn-success-outline').click();
         const currentTimeInMilliseconds = Date.now();
 
-        // Send an unique username always while creating new user
+        // Use an unique username while creating a new user
         cy.get('input#username').type(`always.unique.username${currentTimeInMilliseconds}@gmail.com`);
         cy.get('input#firstName').type(`Firstname${currentTimeInMilliseconds}`);
         cy.get('input#lastName').type(`Lastname${currentTimeInMilliseconds}`);
@@ -25,7 +27,7 @@ describe('Registration tests', function(){
         cy.get('.btn-success-outline').click();
         const currentTimeInMilliseconds = Date.now();
 
-        // Send an existing username
+        // Use an existing username
         cy.get('input#username').type(`kiran.redhat@gmail.com`);
         cy.get('input#firstName').type(`Firstname${currentTimeInMilliseconds}`);
         cy.get('input#lastName').type(`Lastname${currentTimeInMilliseconds}`);
