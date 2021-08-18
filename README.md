@@ -1,4 +1,34 @@
-## Buggy Cars Rating
+## A sample application's Functional + Visual automated tests with Cypress
+
+### Application to test
+https://buggy.justtestit.org
+
+### Automate the top 5 critical functionalities of BuggyCars
+<b> I've written happy path automated tests for following 2 out of 5 functionalities as it is for demonstration purpose. </b>
+1. User registration & profile updates
+2. User login
+3. Un-authenticated user actions - able to see votes and all comments for Popular make, Popular model & Overall rating
+4. Authenticated user actions - able to vote in addition to seeing votes and all comments for Popular make, Popular model & Overall rating
+5. Headers, footer and homepage logo
+
+<b> Prerequisites to execute tests:</b>
+1. node --version : v16.6.2
+2. npm --version: 7.20.3
+
+<b>  How to execute functional automated tests:</b> 
+1. `git clone https://github.com/kiran-redhat/cypress-with-vr-html-report.git`
+2. `npm install`
+3. `npm run executeFunctionalTests:report` - You will see cypress opened and running automated tests in Chrome browser
+4. Open `cypress/reports/mochawesome.html` file - to see report in beautiful HTML format
+
+<b>  How to execute [visual automated tests](https://medium.com/norwich-node-user-group/visual-regression-testing-with-cypress-io-and-cypress-image-snapshot-99c520ccc595) </b> 
+<p> This isn't part of assessment - I've written it to demonstrate how few lines of code can test entire page in multiple screen sizes.
+As different systems got different architecture, good strategy is to run these tests in docker containers - so they will generate same snapshots all the times (without which they may fail). </p>
+
+1. `git clone https://github.com/kiran-redhat/cypress-with-vr-html-report.git`
+2. `npm install`
+3. `npm run executeVisualTests:report` - Running these tests in headless mode - so browser will not open (please see command prompts)
+4. Open `cypress/reports/mochawesome.html` file - to see report in beautiful HTML format
 
 ### A short description of the test approach for this project including automation strategy
 
@@ -38,30 +68,3 @@ Expected: Sorting should work for all the columns
 Actual: Clicking on columns not sorting them in ascending or descending order</p>
 
 <b> Evidences: </b> <p>Please see Bug2_Evidence_Screenshot.png in this repo</p>
-
-### Automate the top 5 critical functionalities of BuggyCars
-<b> I've written happy path automated tests for following 2 out of 5 functionalities as it is for demonstration purpose. </b>
-1. User registration & profile updates
-2. User login
-3. Un-authenticated user actions - able to see votes and all comments for Popular make, Popular model & Overall rating
-4. Authenticated user actions - able to vote in addition to seeing votes and all comments for Popular make, Popular model & Overall rating
-5. Headers, footer and homepage logo
-
-<b> Prerequisites to execute tests:</b>
-1. node --version : v16.6.2
-2. npm --version: 7.20.3
-
-<b>  How to execute functional automated tests:</b> 
-1. `git clone https://github.com/kiran-redhat/cypress-with-vr-html-report.git`
-2. `npm install`
-3. `npm run executeFunctionalTests:report` - You will see cypress opened and running automated tests in Chrome browser
-4. Open `cypress/reports/mochawesome.html` file - to see report in beautiful HTML format
-
-<b>  How to execute [visual automated tests](https://medium.com/norwich-node-user-group/visual-regression-testing-with-cypress-io-and-cypress-image-snapshot-99c520ccc595) </b> 
-<p> This isn't part of assessment - I've written it to demonstrate how few lines of code can test entire page in multiple screen sizes.
-As different systems got different architecture, good strategy is to run these tests in docker containers - so they will generate same snapshots all the times (without which they may fail). </p>
-
-1. `git clone https://github.com/kiran-redhat/cypress-with-vr-html-report.git`
-2. `npm install`
-3. `npm run executeVisualTests:report` - Running these tests in headless mode - so browser will not open (please see command prompts)
-4. Open `cypress/reports/mochawesome.html` file - to see report in beautiful HTML format
