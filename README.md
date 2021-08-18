@@ -1,4 +1,4 @@
-## A sample application's Functional + Visual automated tests with Cypress
+## A sample application's functional + visual automated tests with Cypress
 
 ### Application to test
 https://buggy.justtestit.org
@@ -30,7 +30,7 @@ As different systems got different architecture, good strategy is to run these t
 3. `npm run executeVisualTests:report` - Running these tests in headless mode - so browser will not open (please see command prompts)
 4. Open `cypress/reports/mochawesome.html` file - to see report in beautiful HTML format
 
-### A short description of the test approach for this project including automation strategy
+### A short description of the test approach for this project
 
 <b> Manual testing</b>
 1. Exploratory Testing (as application has already been developed)
