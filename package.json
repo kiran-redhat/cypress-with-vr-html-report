@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/kiran-redhat/cypress-with-vr-html-report#readme",
   "devDependencies": {
-    "cypress": "^8.2.0",
-    "cypress-image-snapshot": "^4.0.1",
-    "cypress-mochawesome-reporter": "^2.2.1",
-    "npm-run-all": "^4.1.5"
+    "cypress": "12.17.0",
+    "@simonsmith/cypress-image-snapshot": "7.0.0",
+    "cypress-mochawesome-reporter": "3.5.1",
+    "npm-run-all": "4.1.5"
   }
 }
