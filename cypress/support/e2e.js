@@ -10,7 +10,7 @@ addMatchImageSnapshotCommand({
     failureThreshold: 0.00,
     failureThresholdType: 'percent',
     customDiffConfig: { threshold: 0.0 },
-    capture: 'viewport',    
+    capture: 'viewport',
     customSnapshotsDir: 'cypress/snapshots/',
     customDiffDir: 'cypress/reports/screenshots/'
 })
