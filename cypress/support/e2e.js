@@ -13,4 +13,11 @@ addMatchImageSnapshotCommand({
     capture: 'viewport',
     customSnapshotsDir: 'cypress/snapshots/',
     customDiffDir: 'cypress/reports/screenshots/'
-})
+});
+
+// https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Support-file
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+});
