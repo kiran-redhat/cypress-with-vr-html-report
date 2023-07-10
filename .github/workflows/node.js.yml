@@ -29,9 +29,10 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run executeFunctionalTests:report
+    - run: pwd & ls -ltr
     
     - uses: actions/upload-artifact@v3
       with:
         name: Reports
-        path: /cypress/reports
+        path: cypress-with-vr-html-report/cypress/reports/*
         if-no-files-found: error
