@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "cypressOpen": "cypress open",
-    "executeFunctionalTests": "cypress run --headed --spec 'cypress/integration/functional-automated-tests/*.js' --browser chrome",
-    "executeVisualTests": "cypress run --spec 'cypress/integration/visual-automated-tests/*.js' --browser chrome",
+    "executeFunctionalTests": "cypress run --headed --spec 'cypress/e2e/functional-automated-tests/*.js' --browser chrome",
+    "executeVisualTests": "cypress run --spec 'cypress/e2e/visual-automated-tests/*.cy.js' --browser chrome",
     "executeAllTests": "npm-run-all --continue-on-error executeVisualTests executeFunctionalTests",
     "mergeJsonFiles": "mochawesome-merge cypress/reports/.jsons/*.json >| cypress/reports/mochawesome.json",
     "generateHtmlReport": "marge --reportDir cypress/reports/ cypress/reports/mochawesome.json",
@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/kiran-redhat/cypress-with-vr-html-report#readme",
   "devDependencies": {
-    "cypress": "^8.2.0",
-    "cypress-image-snapshot": "^4.0.1",
-    "cypress-mochawesome-reporter": "^2.2.1",
-    "npm-run-all": "^4.1.5"
+    "cypress": "12.17.0",
+    "@simonsmith/cypress-image-snapshot": "7.0.0",
+    "cypress-mochawesome-reporter": "3.5.1",
+    "npm-run-all": "4.1.5"
   }
 }

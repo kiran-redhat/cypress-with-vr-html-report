@@ -8,16 +8,6 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-// Support commands to use cypress-image-snapshot
-import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
-
-addMatchImageSnapshotCommand({
-  failureThreshold: 0.00,
-  failureThresholdType: 'percent',
-  customDiffConfig: { threshold: 0.0 },
-  capture: 'viewport',
-});
-
 // Desktop viewport
 Cypress.Commands.add("desktopViewport", (size) => {
 cy.viewport(1280, 720);
