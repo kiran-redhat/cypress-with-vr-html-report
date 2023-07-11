@@ -18,27 +18,27 @@ https://buggy.justtestit.org
 <b>  How to execute functional automated tests:</b> 
 1. `git clone https://github.com/kiran-redhat/cypress-with-vr-html-report.git`
 2. `npm install`
-3. `npm run executeFunctionalTests:report` - You will see cypress opened and running automated tests in Chrome browser
-4. Open `cypress/reports/mochawesome.html` file - to see report in beautiful HTML format
+3. `npm run executeFunctionalTests:report` - You will see Cypress opened and running automated tests in the Chrome browser
+4. Open `cypress/reports/mochawesome.html` file - to see the report in beautiful HTML format
 
 <b>  How to execute [visual automated tests](https://medium.com/norwich-node-user-group/visual-regression-testing-with-cypress-io-and-cypress-image-snapshot-99c520ccc595) </b> 
-<p> This isn't part of assessment - I've written it to demonstrate how few lines of code can test entire page in multiple screen sizes.
-As different systems got different architecture, good strategy is to run these tests in docker containers - so they will generate same snapshots all the times (without which they may fail). </p>
+<p> I've written it to demonstrate how few lines of code can test an entire page in multiple screen sizes.
+As different systems got different architectures, a good strategy is to run these tests in docker containers - so they will generate same snapshots all the time (without which they may fail). </p>
 
 1. `git clone https://github.com/kiran-redhat/cypress-with-vr-html-report.git`
 2. `npm install`
-3. `npm run executeVisualTests:report` - Running these tests in headless mode - so browser will not open (please see command prompts)
-4. Open `cypress/reports/mochawesome.html` file - to see report in beautiful HTML format
+3. `npm run executeVisualTests:report` - Running these tests in headless mode - so the browser will not open (please see command prompts)
+4. Open `cypress/reports/mochawesome.html` file - to see the report in beautiful HTML format
 
 ### A short description of the test approach for this project
 
 <b> Manual testing</b>
-1. Exploratory Testing (as application has already been developed)
+1. Exploratory Testing (as the application has already been developed)
 2. Different supported Devices testing
 3. Different supported browsers testing
 4. Accessibility testing
-5. SQL injections as authenticated user
-6. JavaScript errors in browser
+5. SQL injections as an authenticated user
+6. JavaScript errors in the browser
 7. Analytics testing (if there is any)
 8. Geo-location testing (some models may not be available in some regions)
 
@@ -54,9 +54,9 @@ As different systems got different architecture, good strategy is to run these t
 <b> Steps to reproduce: </b>
 <p>
 1. Navigate to https://buggy.justtestit.org/overall
-2. Click on 'Rank' column
+2. Click on the 'Rank' column
 Expected: Overall rating isn't getting sorted in ascending order. It should be 2 after 1.
-Actual: Overall rating should be sorted in ascending order for first click and it should be descending order for second click</p>
+Actual: Overall rating should be sorted in ascending order for the first click and it should be in descending order for the second click</p>
 <b> Evidences: </b> <p> Please see Bug1_Evidence_Screenshot.png in this repo</p>
 
 #### Bug2
