@@ -3,7 +3,7 @@ const {addMatchImageSnapshotPlugin} = require('@simonsmith/cypress-image-snapsho
 
 module.exports = defineConfig({
     e2e: {
-        projectId: "cypress-with-vr-html-report",
+        projectId: "386ry1",
         baseUrl: "https://buggy.justtestit.org",
         chromeWebSecurity: false,
         reporter: "cypress-mochawesome-reporter",
