@@ -27,12 +27,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run build --if-present
     - run: npm run executeVisualTests
     - run: pwd & ls -ltr
     
     - uses: actions/upload-artifact@v3
       with:
         name: Reports
-        path: /home/runner/work/cypress-with-vr-html-report/cypress-with-vr-html-report/cypress/*
+        path: /home/runner/work/cypress-with-vr-html-report/cypress-with-vr-html-report/cypress/reports/*
         if-no-files-found: error
