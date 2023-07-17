@@ -4,7 +4,10 @@
 https://buggy.justtestit.org
 
 ### Github actions
-<p> See all test runs under github actions </p>
+<b> How to see test runs and report without installing anything on my local ? </b>
+1. Navigate to 'Actions' tab on Github, then click on 'Summary' on left navigation
+2. Download 'cypress-folder' from 'main' branch's latest run
+2. Open 'mochawesome.html' from 'reports' folder
 
 ### Automate the top 5 critical functionalities of BuggyCars
 <b> I've written happy path automated tests for following 2 out of 5 functionalities as it is for demonstration purpose. </b>
