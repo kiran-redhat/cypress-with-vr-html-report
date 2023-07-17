@@ -34,5 +34,5 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: Reports
-        path: /home/runner/work/cypress-with-vr-html-report/cypress-with-vr-html-report/cypress/reports/*
+        path: /home/runner/work/cypress-with-vr-html-report/cypress-with-vr-html-report/cypress/*
         if-no-files-found: error
