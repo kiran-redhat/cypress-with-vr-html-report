@@ -3,6 +3,9 @@
 ### Application to test
 https://buggy.justtestit.org
 
+### Github actions
+<p> See all test runs under github actions </p>
+
 ### Automate the top 5 critical functionalities of BuggyCars
 <b> I've written happy path automated tests for following 2 out of 5 functionalities as it is for demonstration purpose. </b>
 1. User registration & profile updates
