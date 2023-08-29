@@ -20,6 +20,6 @@ jobs:
     - uses: actions/upload-artifact@v3
       if: always()
       with:
-        name: cypress-report
-        path: /home/runner/work/cypress-with-vr-html-report/cypress-with-vr-html-report/cypress/
+        name: cypress-with-vr-html-report
+        path: /home/runner/work/cypress-with-vr-html-report/
         retention-days: 30
