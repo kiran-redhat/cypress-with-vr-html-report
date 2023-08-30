@@ -10,7 +10,7 @@
     "executeAllTests": "npm-run-all --continue-on-error executeVisualTests executeFunctionalTests",
     "mergeJsonFiles": "mochawesome-merge cypress/reports/.jsons/*.json >| cypress/reports/mochawesome.json",
     "generateHtmlReport": "marge --reportDir cypress/reports/ cypress/reports/mochawesome.json",
-    "executeFunctionalTests:report": "run-s --continue-on-error executeFunctionalTests mergeJsonFiles generateHtmlReport",    
+    "executeFunctionalTests:report": "run-s --continue-on-error executeFunctionalTests mergeJsonFiles generateHtmlReport",
     "executeVisualTests:report": "run-s --continue-on-error executeVisualTests mergeJsonFiles generateHtmlReport",
     "executeAllTests:report": "run-s --continue-on-error executeAllTests mergeJsonFiles generateHtmlReport"
   },
@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/kiran-redhat/cypress-with-vr-html-report#readme",
   "devDependencies": {
-    "cypress": "12.17.0",
-    "@simonsmith/cypress-image-snapshot": "7.0.0",
+    "@simonsmith/cypress-image-snapshot": "^8.1.1",
+    "cypress": "^13.0.0",
     "cypress-mochawesome-reporter": "3.5.1",
     "npm-run-all": "4.1.5"
   }
