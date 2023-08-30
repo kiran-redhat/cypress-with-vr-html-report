@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "cypressOpen": "cypress open",
-    "executeFunctionalTests": "cypress run --record --headed --spec 'cypress/e2e/functional-automated-tests/*.js' --browser chrome",
-    "executeVisualTests": "cypress run --record --spec 'cypress/e2e/visual-automated-tests/*.cy.js' --browser chrome",
+    "executeFunctionalTests": "cypress run --record --parallel --spec 'cypress/e2e/functional-automated-tests/*.js' --browser chrome",
+    "executeVisualTests": "cypress run --record --parallel --spec 'cypress/e2e/visual-automated-tests/*.cy.js' --browser chrome",
     "executeAllTests": "npm-run-all --continue-on-error executeVisualTests executeFunctionalTests",
     "mergeJsonFiles": "mochawesome-merge cypress/reports/.jsons/*.json >| cypress/reports/mochawesome.json",
     "generateHtmlReport": "marge --reportDir cypress/reports/ cypress/reports/mochawesome.json",
