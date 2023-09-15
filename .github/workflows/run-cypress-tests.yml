@@ -30,7 +30,7 @@ jobs:
       with: 
         status: ${{ job.status }}
         channel: '#apps-monitoring'
-        message: Cypres tests on the branch '{{ env.GITHUB_REF_NAME }}' are '${{ job.status }}'
+        message: Cypress tests on the branch '{{ env.GITHUB_REF_NAME }}' are '${{ job.status }}'
       if: always()
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
