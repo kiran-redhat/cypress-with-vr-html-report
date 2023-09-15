@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "cypressOpen": "cypress open",
-    "executeFunctionalTests": "cypress run --record $CYPRESS_RECORD_KEY --parallel --spec 'cypress/e2e/functional-automated-tests/*.js' --browser chrome --ci-build-id $BUILD_NUMBER",
-    "executeVisualTests": "cypress run --record $CYPRESS_RECORD_KEY --parallel --spec 'cypress/e2e/visual-automated-tests/*.cy.js' --browser chrome --ci-build-id $BUILD_NUMBER",
-    "executeAllTests": "npm-run-all --continue-on-error executeVisualTests executeFunctionalTests",
+    "executeFunctionalTests": "cypress run --record $CYPRESS_RECORD_KEY --parallel --spec 'cypress/e2e/functional-automated-tests/*.js' --browser chrome --ci-build-id $GITHUB_RUN_NUMBER",
+    "executeVisualTests": "cypress run --record $CYPRESS_RECORD_KEY --parallel --spec 'cypress/e2e/visual-automated-tests/*.cy.js' --browser chrome --ci-build-id $GITHUB_RUN_NUMBER",
+    "executeAllTests": "cypress run --record $CYPRESS_RECORD_KEY --parallel --spec 'cypress/e2e/**' --browser chrome --ci-build-id $GITHUB_RUN_NUMBER",
     "mergeJsonFiles": "mochawesome-merge cypress/reports/.jsons/*.json >| cypress/reports/mochawesome.json",
     "generateHtmlReport": "marge --reportDir cypress/reports/ cypress/reports/mochawesome.json",
     "executeFunctionalTests:report": "run-s --continue-on-error executeFunctionalTests mergeJsonFiles generateHtmlReport",
