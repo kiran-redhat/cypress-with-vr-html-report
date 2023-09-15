@@ -23,3 +23,12 @@ jobs:
         name: cypress
         path: /home/runner/work/cypress-with-vr-html-report/cypress-with-vr-html-report/cypress/
         retention-days: 30
+    - name: Send message to Slack API
+      uses: archive/github-actions-slack@v2.0.0
+      id: notify
+      with:
+        slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_USER_OAUTH_ACCESS_TOKEN }}
+        slack-channel: C05KERQEWAX
+        slack-text: Hello! Event "${{ github.event_name }}" in "${{ github.repository }}" 🤓
+    - name: Result from Send Message
+      run: echo "The result was ${{ steps.notify.outputs.slack-result }}"        
