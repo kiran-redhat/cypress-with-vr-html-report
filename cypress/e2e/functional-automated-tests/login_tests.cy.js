@@ -7,7 +7,7 @@ describe('Login tests', function(){
         cy.get('.input-sm').type('kiran.redhat@gmail.com');
         cy.get(".pull-xs-right .ng-pristine").type('MySuperSecreat@123');
         cy.get('.btn-success').click();
-        cy.get('.navbar > .container').should('contain', 'Hi, kiran');
+        cy.get('.navbar > .container').should('contain', 'Hi, Firstname');
     });
 
     it('In valid user can not login and shown with an error message', function(){
